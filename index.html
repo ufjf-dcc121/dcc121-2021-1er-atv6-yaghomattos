@@ -481,6 +481,11 @@
         )
           celulas[i].classList.add('parede');
       }
+
+      document.addEventListener('click', Click);
+      function Click(event) {
+        console.log('classe da celula clicada: ', event.target.classList.value);
+      }
     </script>
   </body>
 </html>
