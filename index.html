@@ -496,10 +496,12 @@
           !event.target.classList.contains('tesouro')
         ) {
           event.target.classList.add('orc');
+          event.target.innerHTML = "O";
           console.log('alterada para:', event.target.classList.value);
         }else if (event.target.classList.contains('orc')) {
           event.target.classList.remove('orc');
           event.target.classList.add('tesouro');
+          event.target.innerHTML = "T";
           console.log('alterada para:', event.target.classList.value);
         } else if (event.target.classList.contains('tesouro')) {
           event.target.classList.remove('tesouro');
