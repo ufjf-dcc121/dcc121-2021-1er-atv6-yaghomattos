@@ -485,6 +485,23 @@
       document.addEventListener('click', Click);
       function Click(event) {
         console.log('classe da celula clicada: ', event.target.classList.value);
+        
+        if (event.target.classList.contains('parede')) {
+          event.target.classList.remove('parede');
+        } 
+        else if (
+          !event.target.classList.contains('parede') &&
+          !event.target.classList.contains('orc') &&
+          !event.target.classList.contains('tesouro')
+        ) {
+          event.target.classList.add('orc');
+        }else if (event.target.classList.contains('orc')) {
+          event.target.classList.remove('orc');
+          event.target.classList.add('tesouro');
+        } else if (event.target.classList.contains('tesouro')) {
+          event.target.classList.remove('tesouro');
+          event.target.classList.add('parede');
+        } 
       }
     </script>
   </body>
