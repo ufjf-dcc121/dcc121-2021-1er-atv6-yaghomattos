@@ -484,10 +484,11 @@
 
       document.addEventListener('click', Click);
       function Click(event) {
-        console.log('classe da celula clicada: ', event.target.classList.value);
-        
+        console.log('classe da celula clicada:', event.target.classList.value);
+
         if (event.target.classList.contains('parede')) {
           event.target.classList.remove('parede');
+          console.log('alterada para:', event.target.classList.value);
         } 
         else if (
           !event.target.classList.contains('parede') &&
@@ -495,13 +496,16 @@
           !event.target.classList.contains('tesouro')
         ) {
           event.target.classList.add('orc');
+          console.log('alterada para:', event.target.classList.value);
         }else if (event.target.classList.contains('orc')) {
           event.target.classList.remove('orc');
           event.target.classList.add('tesouro');
+          console.log('alterada para:', event.target.classList.value);
         } else if (event.target.classList.contains('tesouro')) {
           event.target.classList.remove('tesouro');
           event.target.classList.add('parede');
-        } 
+          console.log('alterada para:', event.target.classList.value);
+        }
       }
     </script>
   </body>
