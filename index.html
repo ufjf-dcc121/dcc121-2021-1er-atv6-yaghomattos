@@ -473,16 +473,16 @@
     <script>
       const celulas = document.querySelectorAll('td');
 
-      for (var i = 0; i < celulas.length - 1; i++) {
+      for (var i = 0; i < celulas.length; i++) {
         if (
           !celulas[i].classList.contains('parede') &&
           !celulas[i].classList.contains('orc') &&
           !celulas[i].classList.contains('tesouro')
         )
           celulas[i].classList.add('parede');
+          celulas[i].addEventListener('click', Click);
       }
 
-      celulas[i].addEventListener('click', Click);
       function Click(event) {
         console.log('classe da celula clicada:', event.target.classList.value);
 
